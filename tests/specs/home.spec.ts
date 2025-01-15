@@ -1,4 +1,4 @@
-import { HomePage } from "../support/pages/home";
+import { HomePage } from "../support/pages/Home";
 import { test } from "@playwright/test";
 
 test.describe("Home Page Scenarios", async () => {
