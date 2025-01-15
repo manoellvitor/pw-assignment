@@ -30,10 +30,6 @@ export class LoginPage extends CommonPage {
     expect(this.page.url()).toMatch(/\/sign-in/);
   }
 
-  async shouldBeOnDashboardPage(userName: string): Promise<void> {
-    expect(await this.headerIsVisible(`Good morning, ${userName}`));
-  }
-
   async doLogin(userData: UserData): Promise<void> {
     if (userData.type === "empty") {
       await this.fillInputByLabel("Email or username", "test");
@@ -76,22 +72,5 @@ export class LoginPage extends CommonPage {
     await expect(
       this.page.getByRole("button", { name: "Continue" })
     ).toBeDisabled();
-  }
-
-  async shouldBeOnPortfolioPage(): Promise<void> {
-    expect(await this.headerIsVisible("Portfolio"));
-    expect(this.page.url()).toMatch(/\/portfolio/);
-  }
-
-  async validateTotalPortfolioValue(): Promise<void> {
-    const target = await this.page
-      .getByRole("main")
-      .locator("div")
-      .filter({ hasText: "Portfolio" })
-      .nth(1)
-      .locator("span")
-      .nth(3)
-      .allInnerTexts();
-    expect(Number(target[0])).toBeGreaterThanOrEqual(0);
   }
 }
