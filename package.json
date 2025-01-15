@@ -1,0 +1,29 @@
+{
+  "name": "pw-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:debug": "npx playwright test --debug",
+    "report:allure": "allure serve allure-results"
+  },
+  "keywords": [
+    "automation",
+    "playwright"
+  ],
+  "author": "Manoel Lopes",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "pw-assignment": "file:"
+  },
+  "devDependencies": {
+    "@estruyf/github-actions-reporter": "^1.9.2",
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.6",
+    "allure-playwright": "^3.0.9",
+    "otpauth": "^9.3.6"
+  }
+}
