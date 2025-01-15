@@ -49,15 +49,15 @@ npx playwright install
 cp .env.SAMPLE .env
 ```
 
-5. Fulfill the .env file at the root directory of the project:
+5. Fill in the .env file at the root directory of the project:
 
 ```ts
-ENVIRONMENT = ""   # Possible Options: "test" | "prod" | "dev" | "staging"
-BASE_URL = ""      # Example: "https://www.test.com"
-SECRET_KEY = ""    # Secret Key from 2FA
-USER_NAME = ""     # User Name
-USER_EMAIL = ""    # User Email Address Example: test@test.com
-USER_PASSWORD = "" # User Password
+ENVIRONMENT = "test" # Possible Options: "test" | "prod" | "dev" | "staging"
+BASE_URL = ""        # Example: "https://www.test.com"
+SECRET_KEY = ""      # Secret Key from 2FA
+USER_NAME = ""       # User Name
+USER_EMAIL = ""      # User Email Address Example: test@test.com
+USER_PASSWORD = ""   # User Password
 
 ```
 
@@ -66,7 +66,7 @@ USER_PASSWORD = "" # User Password
 In order to run the tests we need to pass by 2FA, In the project there is a utility function that gets the 2FA token and passes to the Login step, here is tow to get the SECRET_KEY from the 2FA:
 
 1. Login into your account.
-2. Go to Security.
+2. Go to Account Settings > Security.
 3. At Sign-in Two-Factor Authentication (2FA) click on enable Authenticator app.
 4. Then you will be prompt to the following popup with a QR code, click on **"View setup key"**
    1. This is your SECRET_KEY.
@@ -75,12 +75,10 @@ In order to run the tests we need to pass by 2FA, In the project there is a util
    1. Like soo:
 
 ```sn
-.env
-SECRET_KEY = "ADD IT HERE"
+SECRET_KEY = "YOUR_SECRET_KEY_HERE"
 ```
 
 6. And complete the setup as normal from the web application.
-7. Now the Authentication APP will work on both places.
 
 ## Running Tests 🧪
 
@@ -92,16 +90,16 @@ To run the tests locally and headless, use the following command:
 npm run test
 ```
 
-To run the tests locally on UI mode, use the following command:
-
-```sh
-npm run test:ui
-```
-
 To see the test results/report simple run:
 
 ```sh
 npm run test:results
+```
+
+(Optional) To run the tests locally on UI mode, use the following command:
+
+```sh
+npm run test:ui
 ```
 
 ### With Docker 🐳
@@ -148,7 +146,7 @@ Environment variables are managed using the .env file. Sample variables are prov
 
 # Possible Improvements
 
-A better report such as Allure, it is pre-configured in the project but it is not mandatory to use, nor it will affect the test results.
+A better report tool such as Allure, it is pre-configured in the project but it is not mandatory to use, nor it will affect the test results.
 
 ### Allure Report 📄
 
