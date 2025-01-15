@@ -7,6 +7,7 @@
     "test": "npx playwright test",
     "test:ui": "npx playwright test --ui",
     "test:debug": "npx playwright test --debug",
+    "test:results": "npx playwright show-report",
     "report:allure": "allure serve allure-results"
   },
   "keywords": [
